@@ -1,6 +1,6 @@
 //Maya ASCII 2017 scene
 //Name: Robot.ma
-//Last modified: Mon, Feb 05, 2018 10:58:48 PM
+//Last modified: Mon, Feb 05, 2018 11:02:43 PM
 //Codeset: 1252
 requires maya "2017";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +13,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "219A26EE-4332-1EAB-F2CD-23967A549140";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -3.362477314844877 5.6745872548208443 48.7557371109976 ;
-	setAttr ".r" -type "double3" 3.261647331982322 5396.9999999987522 0 ;
+	setAttr ".t" -type "double3" 0.71283802307559796 16.083995460375913 37.900367972274331 ;
+	setAttr ".r" -type "double3" -12.338352664845992 5402.5999999911128 9.9494756703250766e-017 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F321A14D-4A56-20DD-89E7-85987EA81483";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 49.374325325833865;
+	setAttr ".coi" 39.129334133739526;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -11183,6 +11183,25 @@ createNode mesh -n "pPipeShape3" -p "pPipe3";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
+createNode transform -n "pCube18";
+	rename -uid "473F3988-487A-3325-4C0A-C4BF9E5380F6";
+	setAttr ".t" -type "double3" -0.1196382960154132 7.7961351246652928 -1.5238642830451108 ;
+createNode mesh -n "pCubeShape18" -p "pCube18";
+	rename -uid "88B5A142-49AD-E904-2867-04AC78F29C5A";
+	setAttr -k off ".v";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.5 0.375 ;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 8 ".pt[0:7]" -type "float3"  -2.5461509 0 0.61893994 2.5461509 
+		0 0.61893994 -2.5461509 3.6041203 0.61893994 2.5461509 3.6041203 0.61893994 -2.5461509 
+		3.6041203 -0.61893994 2.5461509 3.6041203 -0.61893994 -2.5461509 0 -0.61893994 2.5461509 
+		0 -0.61893994;
+	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "20E01CA9-4E3D-9997-DB3E-15A3BBBDC2CC";
 	setAttr -s 2 ".lnk";
@@ -11507,6 +11526,9 @@ createNode polyCylinder -n "polyCylinder1";
 createNode polyPipe -n "polyPipe1";
 	rename -uid "80265284-4909-5AC3-8502-5B94EBB6CE02";
 	setAttr ".sc" 0;
+createNode polyCube -n "polyCube8";
+	rename -uid "21571C0C-4011-DBD9-B8C0-F382A9E8E9F9";
+	setAttr ".cuv" 4;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -11525,7 +11547,7 @@ select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
-	setAttr -s 41 ".dsm";
+	setAttr -s 42 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 34 ".gn";
 select -ne :initialParticleSE;
@@ -11602,6 +11624,7 @@ connectAttr "polyCube6.out" "pCubeShape13.i";
 connectAttr "polyCube7.out" "pCubeShape17.i";
 connectAttr "polyCylinder1.out" "pCylinderShape1.i";
 connectAttr "polyPipe1.out" "pPipeShape1.i";
+connectAttr "polyCube8.out" "pCubeShape18.i";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -11708,6 +11731,7 @@ connectAttr "pCylinderShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape1.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape2.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "pPipeShape3.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "pCubeShape18.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId1.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId2.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId3.msg" ":initialShadingGroup.gn" -na;
