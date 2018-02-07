@@ -1,6 +1,18 @@
 //Maya ASCII 2017ff05 scene
 //Name: Robot.ma
+<<<<<<< Updated upstream
 //Last modified: Tue, Feb 06, 2018 03:55:57 PM
+=======
+<<<<<<< Updated upstream
+//Last modified: Mon, Feb 05, 2018 11:02:43 PM
+=======
+<<<<<<< HEAD
+//Last modified: Tue, Feb 06, 2018 12:31:47 AM
+=======
+//Last modified: Tue, Feb 06, 2018 03:55:57 PM
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 //Codeset: 1252
 requires maya "2017ff05";
 currentUnit -l centimeter -a degree -t film;
@@ -13,13 +25,40 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "219A26EE-4332-1EAB-F2CD-23967A549140";
 	setAttr ".v" no;
+<<<<<<< Updated upstream
 	setAttr ".t" -type "double3" -1.3542791504494893 22.85142389404049 25.85557865081843 ;
 	setAttr ".r" -type "double3" -32.138352481896185 5398.9999999880692 2.9822242210764825e-016 ;
+=======
+<<<<<<< Updated upstream
+	setAttr ".t" -type "double3" 0.71283802307559796 16.083995460375913 37.900367972274331 ;
+	setAttr ".r" -type "double3" -12.338352664845992 5402.5999999911128 9.9494756703250766e-017 ;
+=======
+<<<<<<< HEAD
+	setAttr ".t" -type "double3" 2.2159646890183282 20.033849698436892 36.714981209492507 ;
+	setAttr ".r" -type "double3" -18.338352664838947 5404.9999999895217 9.9771996362292577e-017 ;
+=======
+	setAttr ".t" -type "double3" -1.3542791504494893 22.85142389404049 25.85557865081843 ;
+	setAttr ".r" -type "double3" -32.138352481896185 5398.9999999880692 2.9822242210764825e-016 ;
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F321A14D-4A56-20DD-89E7-85987EA81483";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
+<<<<<<< Updated upstream
 	setAttr ".coi" 32.895524910071067;
+=======
+<<<<<<< Updated upstream
+	setAttr ".coi" 39.129334133739526;
+=======
+<<<<<<< HEAD
+	setAttr ".coi" 39.129334133739761;
+=======
+	setAttr ".coi" 32.895524910071067;
+>>>>>>> master
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
