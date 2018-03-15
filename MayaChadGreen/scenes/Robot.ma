@@ -1,6 +1,6 @@
 //Maya ASCII 2017ff05 scene
 //Name: Robot.ma
-//Last modified: Thu, Mar 15, 2018 03:48:55 PM
+//Last modified: Thu, Mar 15, 2018 03:55:54 PM
 //Codeset: 1252
 requires maya "2017ff05";
 requires "stereoCamera" "10.0";
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "219A26EE-4332-1EAB-F2CD-23967A549140";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1.8082271234820997 15.099559305243041 46.174773658946577 ;
-	setAttr ".r" -type "double3" -9.9383523726219885 3604.999999999925 0 ;
+	setAttr ".t" -type "double3" -5.8325982795992406 17.945981143080065 40.126979711654414 ;
+	setAttr ".r" -type "double3" -13.538352372542045 3950.9999999990409 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F321A14D-4A56-20DD-89E7-85987EA81483";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 49.331710385464724;
+	setAttr ".coi" 41.560014517046291;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -25992,14 +25992,8 @@ createNode skinCluster -n "skinCluster1";
 	setAttr ".wl[1639].w[3]"  1;
 	setAttr ".wl[1640].w[3]"  1;
 	setAttr ".wl[1641].w[3]"  1;
-	setAttr -s 5 ".wl[1642].w";
-	setAttr ".wl[1642].w[3]" 0.16218646296533587;
-	setAttr ".wl[1642].w[4]" 0.20197525680418771;
-	setAttr ".wl[1642].w[9]" 0.23973378293420408;
-	setAttr ".wl[1642].w[10]" 0.21972997305809963;
-	setAttr ".wl[1642].w[11]" 0.17637452423817288;
-	setAttr -s 5 ".wl[1643].w[3:7]"  0.16448197798856579 0.20341155454920501 
-		0.2356803612804132 0.22065599850116993 0.17577010768064602;
+	setAttr ".wl[1642].w[3]"  1;
+	setAttr ".wl[1643].w[3]"  1;
 	setAttr ".wl[1644].w[5]"  1;
 	setAttr ".wl[1645].w[9]"  1;
 	setAttr ".wl[1646].w[9]"  1;
@@ -31969,7 +31963,7 @@ connectAttr "Left_Hip.obcc" "skinCluster1.ifcl[17]";
 connectAttr "Left_Knee.obcc" "skinCluster1.ifcl[18]";
 connectAttr "Left_Ankle.obcc" "skinCluster1.ifcl[19]";
 connectAttr "Left_Toe.obcc" "skinCluster1.ifcl[20]";
-connectAttr "Right_Shoulder.msg" "skinCluster1.ptt";
+connectAttr "Left_Shoulder.msg" "skinCluster1.ptt";
 connectAttr "groupParts254.og" "tweak1.ip[0].ig";
 connectAttr "groupId311.id" "tweak1.ip[0].gi";
 connectAttr "skinCluster1GroupId.msg" "skinCluster1Set.gn" -na;
